@@ -138,7 +138,19 @@ angular.module('rocket-modeler.services', [])
         return rocketBuilderService;
     }]);
 
-var modeler = angular.module('rocket-modeler', ['rocket-modeler.services', 'angularUnits']);
+angular.module('rocket-modeler.directives', [])
+    .directive('rmFloat', [function() {
+        var directive = {
+            require: ['ngModel'],
+            link: function (scope, element, attrs, ctrls) {
+                var ngModel = ctrls[0];
+                ngModel.$parsers.push(parseFloat);
+            }
+        };
+        return directive;
+    }]);
+
+var modeler = angular.module('rocket-modeler', ['rocket-modeler.services', 'rocket-modeler.directives', 'angularUnits']);
 
 modeler.run(['$rootScope', function ($rootScope) {
     $rootScope.rocket = rocketDefinition;
