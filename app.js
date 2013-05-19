@@ -67,7 +67,7 @@ angular.module('rocket-modeler.services', [])
     .service('rocket3DBuilder', ['materialsProvider', function(materials) {
         var partBuilders = {
             nosecone: function (data) {
-                var geometry = new THREE.TangentOgiveGeometry(data.outerDiameter, data.length, 36, 25, false);
+                var geometry = new RocketClubs.TangentOgiveGeometry(data.outerDiameter, data.length, 36, 25, false);
                 var mesh = new THREE.Mesh( geometry, materials.active() );
                 mesh.translateY(-data.getForwardOffset());
                 return mesh;
@@ -83,7 +83,6 @@ angular.module('rocket-modeler.services', [])
             fins: function (data) {
                 var fins = new THREE.Object3D();
                 var finGeometry = new RocketClubs.FinGeometry(data.rootChord, data.tipChord, data.semiSpan, data.sweepLength, data.thickness);
-                //rootChord, tipChord, semiSpan, sweepLength, thickness
                 for(var i = 0; i < data.count; i++) {
                     var finPivot = new THREE.Object3D();
                     finPivot.rotation.y = 2 * Math.PI * (i / data.count);

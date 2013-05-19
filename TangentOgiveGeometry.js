@@ -1,4 +1,4 @@
-THREE.TangentOgiveGeometry = function ( baseDiameter, height, radiusSegments, heightSegments, openEnded ) {
+RocketClubs.TangentOgiveGeometry = function ( baseDiameter, height, radiusSegments, heightSegments, openEnded ) {
 
 	THREE.Geometry.call( this );
 
@@ -124,4 +124,4 @@ THREE.TangentOgiveGeometry = function ( baseDiameter, height, radiusSegments, he
 
 }
 
-THREE.TangentOgiveGeometry.prototype = Object.create( THREE.Geometry.prototype );
+RocketClubs.TangentOgiveGeometry.prototype = Object.create( THREE.Geometry.prototype );
