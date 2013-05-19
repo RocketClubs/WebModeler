@@ -51,7 +51,26 @@
 	</script>
 
 	<script type="text/ng-template" id="fins-editor">
-		fins-editor
+		<div>
+			<label>Location: {{ activePart.connectionOffset | units:displayUnits }}</label>
+			<input type="range" min="1.0" max="1219.2" step="0.1" ng-model="activePart.connectionOffset" rm-float />
+		</div>
+		<div>
+			<label>Root chord: {{ activePart.rootChord | units:displayUnits }}</label>
+			<input type="range" min="1.0" max="1219.2" step="0.1" ng-model="activePart.rootChord" rm-float />
+		</div>
+		<div>
+			<label>Semi span: {{ activePart.semiSpan | units:displayUnits }}</label>
+			<input type="range" min="1.0" max="1219.2" step="0.1" ng-model="activePart.semiSpan" rm-float />
+		</div>
+		<div>
+			<label>Tip chord: {{ activePart.tipChord | units:displayUnits }}</label>
+			<input type="range" min="1.0" max="1219.2" step="0.1" ng-model="activePart.tipChord" rm-float />
+		</div>
+		<div>
+			<label>Sweep length: {{ activePart.sweepLength | units:displayUnits }}</label>
+			<input type="range" min="1.0" max="1219.2" step="0.1" ng-model="activePart.sweepLength" rm-float />
+		</div>
 	</script>
 
 	<script type="text/javascript">
