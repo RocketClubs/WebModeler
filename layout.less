@@ -1,0 +1,105 @@
+﻿html, body {
+	background: #eee;
+	min-height: 100%;
+	font-family: arial;
+}
+
+#render-container {
+	height: 400px;
+	padding: 10px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.orientation-selector {
+	margin: 15px 0;
+	display: inline-block;
+
+	a {
+		display: inline-block;
+		background-image: url(orientations.png);
+		background-repeat: no-repeat;
+		height: 16px;
+		width: 16px;
+		cursor: pointer;
+
+		+ a {
+			margin-left: 15px;
+		}
+
+		&.orientation-finSpread {
+			background-position: 0 0;
+		}
+
+		&.orientation-longWays {
+			background-position: -16px 0;
+		}
+	}
+}
+
+.display-units-selector {
+	margin: 15px 0;
+	margin-left: 45px;
+	display: inline-block;
+
+	a {
+		display: inline-block;
+		cursor: pointer;
+
+		+ a {
+			margin-left: 15px;
+		}
+
+		&.active {
+			font-weight: bold;
+		}
+	}
+}
+
+.editor {
+	min-height: 350px;
+	position: relative;
+
+	> div {
+		min-height: 350px;
+		padding: 15px;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	}
+
+	.parts-list {
+		max-width: 35%;
+
+		.part {
+			.name {
+				padding: 4px;
+				cursor: pointer;
+
+				&.active {
+					background-color: #0000ff;
+					color: #ffffff;
+				}
+			}
+
+			> .part {
+				margin-left: 25px;
+			}
+		}
+	}
+
+	.part-editor {
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 63%;
+
+		label {
+			display: block;
+		}
+
+		input[type="range"] {
+			width: 100%;
+		}
+	}
+}
